@@ -34,7 +34,7 @@ class Rocket
     end
   end
 
-  def land
+  def land  #sets
     if flying?
       @flying = false
       return true
