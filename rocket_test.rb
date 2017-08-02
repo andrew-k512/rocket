@@ -42,11 +42,8 @@ class RocketTest < Minitest::Test
     rocket = Rocket.new
     flying = false
 
-    # act
-    result = rocket.land
-
     # assert
-    assert_equal(result, false)
+    assert_equal(rocket.land, false)
   end
 
   def test_status_of_rocket_if_flying()
@@ -54,26 +51,20 @@ class RocketTest < Minitest::Test
     rocket = Rocket.new(name: "nasarocket")
     rocket.lift_off
 
-    # act
-    result = rocket.status
-
     # assert
-    assert_equal(result, "Rocket nasarocket is flying through the sky!")
+    assert_equal("Rocket nasarocket is flying through the sky!", rocket.status)
   end
 
   def test_status_of_rocket_if_landed
     # arrange
     rocket = Rocket.new(name: "nasarocket")
-    rocket.land
-
-    # act
-    result = rocket.status
 
     # assert
-    assert_equal(result, "Rocket nasarocket is ready for lift off!")
+    assert_equal("Rocket nasarocket is ready for lift off!", rocket.status)
   end
 
   def test_random_name_returns_prefix_and_suffix
+    skip
     # arrange
     rocket = Rocket.new
     rocket.random_name
